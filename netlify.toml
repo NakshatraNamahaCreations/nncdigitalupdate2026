@@ -1,0 +1,8 @@
+# Netlify config for the MAIN website (Git-based deploys).
+# The static export is produced by `npm run build` into ./out
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "20"

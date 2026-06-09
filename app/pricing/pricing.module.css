@@ -1,0 +1,105 @@
+.page {
+  padding-top: 130px;
+  padding-bottom: 100px;
+  background: var(--white);
+}
+
+.head {
+  text-align: center;
+  max-width: 760px;
+  margin-inline: auto;
+  padding-bottom: 48px;
+}
+.kicker {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.title {
+  margin-top: 16px;
+  font-size: clamp(34px, 4.6vw, 60px);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  color: var(--ink);
+}
+.navy {
+  color: var(--navy);
+}
+.sub {
+  margin: 18px auto 0;
+  max-width: 600px;
+  font-size: clamp(16px, 1.2vw, 19px);
+  color: var(--grey);
+  line-height: 1.55;
+}
+
+.note {
+  margin-top: 22px;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--grey-soft);
+}
+
+.tableSection {
+  margin-top: 90px;
+}
+.tableTitle {
+  text-align: center;
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 36px;
+}
+
+.cta {
+  margin-top: 90px;
+}
+.ctaBand {
+  text-align: center;
+  background: linear-gradient(135deg, var(--navy), var(--navy-deep));
+  border-radius: var(--r-lg);
+  padding: clamp(48px, 6vw, 80px) 28px;
+  box-shadow: var(--sh-lg);
+}
+.ctaBand h2 {
+  color: #fff;
+  font-size: clamp(26px, 3.4vw, 44px);
+  letter-spacing: -0.03em;
+}
+.ctaBand p {
+  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+}
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 26px;
+  padding: 15px 26px;
+  border-radius: var(--r-sm);
+  background: #fff;
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ctaBtn svg {
+  width: 17px;
+  height: 17px;
+  transition: transform 0.2s ease;
+}
+.ctaBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);
+}
+.ctaBtn:hover svg {
+  transform: translateX(4px);
+}
