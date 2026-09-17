@@ -16,19 +16,19 @@ export const nav = {
 }
 
 export const hero = {
-  eyebrow: 'The decision-making CRM',
+  eyebrow: 'The decision making CRM',
   titlePre: "India's ",
   titleNavy: 'most trusted',
   titlePost: ' CRM, for every industry.',
-  leadStrong: 'One price for your whole team.',
-  lead: "Choose a plan by team size: 5, 10 or unlimited users, with sales pipeline, forecasting, enquiries and WhatsApp built in. NNC turns last month's numbers into a clear 3, 6 and 12 month forecast, so you always know your next move.",
+  leadStrong: 'Most CRMs make you fit your business into their software. NNC CRM does the opposite.',
+  lead: 'Answer a few questions about how you work, and we build you a CRM with only the modules you need. One platform for enquiries, pipeline, forecasting, billing and WhatsApp, and one simple subscription you can pay quarterly, every six months or yearly.',
   ctas: [
     { label: 'Start free trial', href: '#start', variant: 'primary' },
-    { label: 'See a live forecast', href: '#decide', variant: 'ghost' },
+    { label: 'See it in action', href: '#decide', variant: 'ghost' },
   ],
   chips: [
     'Plans for every team size',
-    'One simple yearly price',
+    'Pay quarterly, half yearly or yearly',
     'Free for 30 days',
   ],
   card: {
@@ -45,7 +45,7 @@ export const uspStrip = [
   {
     no: '01',
     title: 'One price for your whole team',
-    body: 'Pick a plan by team size — 5, 10 or unlimited users. Every plan includes the core CRM, with no per-seat math and no surprises.',
+    body: 'Pick a plan by team size: 1, 3 or 10 users. Every plan includes the core CRM, with no per seat math and no surprises.',
   },
   {
     no: '02',
@@ -93,8 +93,8 @@ export const decisions = {
 export const pricing = {
   eyebrow: 'Pricing',
   title: 'Plans and pricing for every business',
-  lead: 'Every plan includes the core CRM. Bigger plans unlock forecasting, WhatsApp and deeper analytics.',
-  note: 'Prices are billed yearly. GST extra. Cancel anytime.',
+  lead: 'One transparent price by team size, not a per user bill that punishes you for growing. Pay quarterly, every six months or yearly. Start free, upgrade when you are ready.',
+  note: 'Prices are by team size band, plus 18% GST. Start free, no credit card.',
   compareLabel: 'Compare all features',
 }
 
@@ -143,24 +143,28 @@ export const faq = {
   title: 'NNC CRM, answered.',
   items: [
     {
-      q: 'How is NNC different from other CRMs?',
-      a: "Two ways. First, you pick a simple plan by team size (5, 10 or unlimited users) for one yearly price, instead of paying per seat or buying a bloated all in one. Second, NNC doesn't just store your past; it reads your numbers and projects where your business is heading over the next 3, 6 and 12 months.",
+      q: 'Is NNC CRM for my industry?',
+      a: 'Yes. The platform is modular and we ship ready packs for education, manufacturing, healthcare, retail, real estate, service businesses and sales teams.',
     },
     {
-      q: 'Can I change plans as I grow?',
-      a: 'Yes. Start on any plan and upgrade as your team grows. Your data carries over instantly and you only pay the difference. Bigger plans add forecasting, WhatsApp, more users and advanced security.',
+      q: 'How is the price decided?',
+      a: 'By team size, not per user. You pick a band of 1, 3 or 10 users, and the price is the same for everyone in that band.',
     },
     {
-      q: 'How does the forecasting work?',
-      a: "NNC looks at your real sales, enquiries and expense history and builds a realistic projection, including last month's actual vs expected, and where your money went across salaries, operating costs and other expenses.",
+      q: 'Can I pay quarterly?',
+      a: 'Yes. Choose quarterly, six monthly or yearly billing. Yearly saves the most.',
     },
     {
-      q: 'Is my business data safe?',
-      a: 'Your data is encrypted in transit and at rest, backed up daily, and protected by role based access and a full audit trail. You control who sees what.',
+      q: 'Does WhatsApp really work inside the CRM?',
+      a: 'Yes. A real WhatsApp inbox is built in. No third party tools.',
     },
     {
-      q: "What's the WhatsApp chatbot for?",
-      a: 'It greets customers who message you, asks five quick questions to understand their business, and hands you a qualified lead with a recommended plan, automatically, around the clock.',
+      q: 'Can I move my data from another CRM?',
+      a: 'Yes. Import from a spreadsheet or another CRM in a few clicks.',
+    },
+    {
+      q: 'Is there a free trial?',
+      a: 'Yes. Start free, no credit card needed.',
     },
   ],
 }

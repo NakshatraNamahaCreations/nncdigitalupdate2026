@@ -47,9 +47,6 @@ export default function Navbar() {
         </nav>
 
         <div className={styles.actions}>
-          <a href={nav.signIn.href} className={styles.signin}>
-            {nav.signIn.label}
-          </a>
           <Button href={nav.cta.href} variant="primary" arrow={false}>
             {nav.cta.label}
           </Button>
@@ -74,9 +71,6 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
-          <a href={nav.signIn.href} onClick={() => setOpen(false)}>
-            {nav.signIn.label}
-          </a>
           <div className={styles.mobileCta}>
             <Button href={nav.cta.href} variant="primary" arrow={false}>
               {nav.cta.label}

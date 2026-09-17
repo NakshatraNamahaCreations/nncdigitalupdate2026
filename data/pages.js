@@ -17,8 +17,8 @@ const heroCtas = [
 /* ============================ INDUSTRIES ============================ */
 const industriesCrumb = { label: 'Industries', href: '/industries' }
 const ind = (slug, o) => ({
-  metaTitle: `${o.name} CRM | NNC CRM`,
-  metaDescription: o.lead,
+  metaTitle: o.metaTitle || `${o.name} CRM | NNC CRM`,
+  metaDescription: o.metaDescription || o.lead,
   breadcrumb: [HOME, industriesCrumb, { label: o.name }],
   hero: { eyebrow: 'Industries', title: o.title, lead: o.lead, ctas: heroCtas, media: img(o.img, o.name) },
   blocks: [
@@ -35,8 +35,11 @@ const ind = (slug, o) => ({
 
 export const INDUSTRIES = {
   'sales-teams': ind('sales-teams', {
-    name: 'Sales teams', title: 'A CRM that helps sales teams close faster',
-    lead: 'Capture every lead, see your whole pipeline, and chase the deals most likely to close, all in one place.',
+    name: 'Sales teams',
+    metaTitle: 'CRM for Sales Teams | Pipeline & Activity | NNC CRM',
+    metaDescription: 'Give your sales team a pipeline they will use, daily call lists and live targets. Close more deals and chase fewer dead leads.',
+    title: 'A CRM your sales team will open every morning.',
+    lead: 'Sales tools fail when reps see them as admin. NNC CRM flips that. It tells each rep who to call today, keeps the pipeline updated with a drag, and shows the manager the truth without a single status meeting.',
     img: '/img/case-sales.jpg', img2: '/img/scene-deal.jpg',
     splitTitle: 'Stop losing deals in spreadsheets and chat threads',
     splitBody: 'When leads live in notebooks, inboxes and WhatsApp, deals go cold. NNC keeps every opportunity in one pipeline your whole team can see.',
@@ -48,8 +51,11 @@ export const INDUSTRIES = {
     ],
   }),
   'service-businesses': ind('service-businesses', {
-    name: 'Service businesses', title: 'Run clients, projects and payments in one CRM',
-    lead: 'From the first enquiry to the final invoice, keep every client, project and payment connected.',
+    name: 'Service businesses',
+    metaTitle: 'CRM for Service Businesses | Jobs & Repeat Revenue | NNC',
+    metaDescription: 'Track every job from enquiry to invoice and protect your repeat revenue with automatic follow ups. Built for service businesses.',
+    title: 'Every job tracked. Every repeat protected.',
+    lead: 'For a service business, the money is in the second job, the renewal, the annual contract. NNC CRM tracks each job from first enquiry to paid invoice, then reminds you to come back before the customer forgets you.',
     img: '/img/case-services.jpg', img2: '/img/scene-support.jpg',
     splitTitle: 'One place for clients, work and money',
     splitBody: 'Service teams juggle enquiries, delivery and billing across tools. NNC ties them together so nothing falls between the cracks.',
@@ -61,8 +67,11 @@ export const INDUSTRIES = {
     ],
   }),
   manufacturing: ind('manufacturing', {
-    name: 'Manufacturing', title: 'Connect orders, dispatch and payments',
-    lead: 'Manage enquiries, quotations, orders and collections across your whole operation, end to end.',
+    name: 'Manufacturing',
+    metaTitle: 'Manufacturing CRM | Enquiry to Dispatch | NNC CRM',
+    metaDescription: 'Manage enquiries, quotations, orders, dispatch and collections across your whole operation, end to end. A CRM built for manufacturers.',
+    title: 'Connect orders, dispatch and payments.',
+    lead: 'A manufacturing sale runs through too many hands: enquiry, quotation, negotiation, order, production, dispatch, payment. When that lives across calls, email and paper, things break. NNC CRM puts the whole chain on one screen, so nothing falls between departments.',
     img: '/img/case-mfg.jpg', img2: '/img/scene-office.jpg',
     splitTitle: 'From enquiry to dispatch, without the chaos',
     splitBody: 'Quotes in one tool, orders in another, payments in a third. NNC brings the full order to cash cycle into a single system.',
@@ -74,8 +83,11 @@ export const INDUSTRIES = {
     ],
   }),
   retail: ind('retail', {
-    name: 'Retail and distribution', title: 'A CRM for retail and distribution',
-    lead: 'Keep customers, orders and repeat business in one place, from the counter to the warehouse.',
+    name: 'Retail and distribution',
+    metaTitle: 'Retail & Distribution CRM | Orders & Dealers | NNC CRM',
+    metaDescription: 'Manage dealer orders, billing, GST and collections in one view. A CRM built for retail and distribution businesses.',
+    title: 'Orders, dealers and collections, in one view.',
+    lead: 'Distribution runs on volume and trust. You cannot afford a missed order or a forgotten payment. NNC CRM keeps every dealer, every order and every rupee outstanding on one screen, so your team sells more and collects faster.',
     img: '/img/scene-mobile.jpg', img2: '/img/scene-data.jpg',
     splitTitle: 'Turn one time buyers into regulars',
     splitBody: 'Walk in, phone, WhatsApp or online, NNC captures every customer and order so you can bring them back again and again.',
@@ -87,8 +99,11 @@ export const INDUSTRIES = {
     ],
   }),
   healthcare: ind('healthcare', {
-    name: 'Healthcare and clinics', title: 'A CRM for clinics and healthcare',
-    lead: 'Manage patients, appointments and follow ups with care, all in one organised system.',
+    name: 'Healthcare and clinics',
+    metaTitle: 'Healthcare & Clinic CRM | Patients & Follow Ups | NNC',
+    metaDescription: 'Manage patient enquiries, appointments and follow ups with care and privacy built in. A CRM made for clinics and healthcare.',
+    title: 'Care that follows up, every time.',
+    lead: 'In healthcare, a missed follow up is more than lost revenue. NNC CRM makes sure every patient enquiry is answered, every appointment is remembered and every follow up happens, with privacy treated as seriously as you treat your patients.',
     img: '/img/scene-people.jpg', img2: '/img/scene-support.jpg',
     splitTitle: 'Never miss a follow up again',
     splitBody: 'Appointments in a diary, patients in a register, reminders in your head. NNC brings it together so patients always come back on time.',
@@ -100,8 +115,11 @@ export const INDUSTRIES = {
     ],
   }),
   education: ind('education', {
-    name: 'Education', title: 'A CRM for coaching and education',
-    lead: 'Track admissions enquiries, follow up with parents and manage fees, all in one place.',
+    name: 'Education',
+    metaTitle: 'Education CRM | Admissions, Parents & Fees | NNC CRM',
+    metaDescription: 'Track admission enquiries, follow up with parents on WhatsApp and manage fees in one place. A CRM built for schools and academies.',
+    title: 'A CRM for coaching and education.',
+    lead: 'Admissions season is won by the institute that follows up fastest. NNC CRM captures every admission enquiry, keeps parents updated on WhatsApp and manages fees, so your counsellors convert more and your office runs calmer.',
     img: '/img/scene-team.jpg', img2: '/img/scene-dashboard.jpg',
     splitTitle: 'Convert more admission enquiries',
     splitBody: 'Enquiries come from ads, referrals and walk ins, then go cold without follow up. NNC keeps every prospective student warm until they join.',
@@ -113,8 +131,11 @@ export const INDUSTRIES = {
     ],
   }),
   'real-estate': ind('real-estate', {
-    name: 'Real estate', title: 'A CRM built for real estate',
-    lead: 'Capture leads, schedule site visits and track bookings from first call to final close.',
+    name: 'Real estate',
+    metaTitle: 'Real Estate CRM | Site Enquiries & Buyer Follow Up | NNC',
+    metaDescription: 'Capture every site and portal enquiry, qualify buyers faster and follow up on WhatsApp so no hot lead is ever lost. A CRM for real estate.',
+    title: 'Never lose a hot buyer to slow follow up.',
+    lead: 'In real estate, the first agent to respond usually wins the deal. NNC CRM pulls in leads from portals, ads, your website and walk ins, qualifies them fast and keeps your team following up on WhatsApp until the site visit is booked.',
     img: '/img/scene-office.jpg', img2: '/img/scene-deal.jpg',
     splitTitle: 'Follow every lead to the close',
     splitBody: 'Property leads are expensive and easy to lose. NNC makes sure every enquiry gets a site visit, a follow up and a fair shot at closing.',
@@ -130,8 +151,8 @@ export const INDUSTRIES = {
 /* ============================ FEATURES ============================ */
 const featuresCrumb = { label: 'Features', href: '/features' }
 const feat = (o) => ({
-  metaTitle: `${o.name} | NNC CRM`,
-  metaDescription: o.lead,
+  metaTitle: o.metaTitle || `${o.name} | NNC CRM`,
+  metaDescription: o.metaDescription || o.lead,
   breadcrumb: [HOME, featuresCrumb, { label: o.name }],
   hero: { eyebrow: 'Product', title: o.title, lead: o.lead, ctas: heroCtas, media: img(o.img, o.name) },
   blocks: [
@@ -143,8 +164,11 @@ const feat = (o) => ({
 
 export const FEATURES = {
   enquiries: feat({
-    name: 'Enquiries', title: 'Catch every enquiry, forget none',
-    lead: 'Capture enquiries from your website, WhatsApp, calls and walk ins, then move each one through your pipeline automatically.',
+    name: 'Enquiries',
+    metaTitle: 'Lead & Enquiry Management Software | NNC CRM',
+    metaDescription: 'Capture every lead from calls, web, WhatsApp and ads in one inbox. Auto assign, auto remind and follow up so no enquiry is ever lost again.',
+    title: 'Every enquiry caught. None forgotten.',
+    lead: 'Leads arrive from everywhere: a missed call, a website form, a WhatsApp message, an ad, a walk in. NNC CRM pulls them all into one inbox, assigns each one to the right person and reminds them to follow up, automatically. The lead you forget is the deal your competitor closes.',
     img: '/img/feat-enquiries.jpg', img2: '/img/scene-office.jpg',
     features: [
       { icon: 'enquiries', title: 'Capture everywhere', body: 'Web forms, WhatsApp, calls and walk ins, all into one inbox.' },
@@ -154,8 +178,11 @@ export const FEATURES = {
     split: { title: 'Know what is hot and what is slipping', body: 'A single view of every enquiry means you always know what to chase today.', bullets: ['Source tracking for every enquiry', 'Stages tailored to your business', 'Daily follow up list for your team'] },
   }),
   'sales-pipeline': feat({
-    name: 'Sales pipeline', title: 'See your whole pipeline at a glance',
-    lead: 'A visual pipeline that shows every deal, its stage and its value, so you always know where revenue is coming from.',
+    name: 'Sales pipeline',
+    metaTitle: 'Sales Pipeline Software & Deal Tracking | NNC CRM',
+    metaDescription: 'A visual sales pipeline that shows every deal by stage, value and owner. Move deals, spot bottlenecks and know what will close this week.',
+    title: 'See every deal. Move it forward.',
+    lead: 'Your pipeline should answer one question in three seconds: what is going to close, and what is stuck. NNC CRM gives you a clean visual board of every deal by stage, value and owner, so your team always knows the next move.',
     img: '/img/scene-dashboard.jpg', img2: '/img/scene-deal.jpg',
     features: [
       { icon: 'pipeline', title: 'Drag and drop', body: 'Move deals through stages in a single click.' },
@@ -164,8 +191,11 @@ export const FEATURES = {
     ],
   }),
   forecasting: feat({
-    name: 'Forecasting', title: 'Decisions backed by real numbers',
-    lead: 'Project revenue, cash and growth for the next 3, 6 and 12 months using your own live data.',
+    name: 'Forecasting',
+    metaTitle: 'Sales Forecasting Software | NNC CRM',
+    metaDescription: 'Forecast revenue 3, 6 and 12 months ahead from real pipeline data. Plan hiring, cash and targets with numbers you can trust.',
+    title: 'Know what next quarter looks like, today.',
+    lead: 'Most businesses run on last month’s numbers. NNC CRM looks forward. It reads your live pipeline and projects revenue 3, 6 and 12 months out, so you can plan hiring, cash flow and targets with confidence instead of hope.',
     img: '/img/feat-forecast.jpg', img2: '/img/scene-planning.jpg',
     features: [
       { icon: 'forecast', title: 'Revenue forecast', body: 'See where you are headed, not just where you have been.' },
@@ -174,8 +204,11 @@ export const FEATURES = {
     ],
   }),
   invoicing: feat({
-    name: 'Invoicing and payments', title: 'From deal won to payment received',
-    lead: 'Raise GST ready invoices, share them on WhatsApp and track every payment, all from the same CRM.',
+    name: 'Invoicing and payments',
+    metaTitle: 'Invoicing & Payment Tracking Software | NNC CRM',
+    metaDescription: 'Raise GST ready invoices, send automatic payment reminders and track collections inside your CRM. Get paid faster, chase less.',
+    title: 'Raise the invoice. Get paid. Move on.',
+    lead: 'The deal is not done when it is won. It is done when the money is in. NNC CRM turns a closed deal into a GST ready invoice in one click, chases the payment for you and shows you exactly who owes what.',
     img: '/img/scene-data.jpg', img2: '/img/scene-office.jpg',
     features: [
       { icon: 'invoice', title: 'GST ready invoices', body: 'Compliant invoices in seconds, no extra software.' },
@@ -184,8 +217,11 @@ export const FEATURES = {
     ],
   }),
   whatsapp: feat({
-    name: 'WhatsApp engagement', title: 'Reach customers where they reply',
-    lead: 'Send updates, offers and reminders on WhatsApp, and turn conversations into deals without leaving your CRM.',
+    name: 'WhatsApp engagement',
+    metaTitle: 'WhatsApp CRM & Business Inbox | NNC CRM',
+    metaDescription: 'A full WhatsApp inbox built into your CRM. Reply, broadcast, automate and qualify leads 24/7 without any third party tools.',
+    title: 'India runs on WhatsApp. So does NNC CRM.',
+    lead: 'If your CRM cannot do WhatsApp, it is missing the most important channel in the country. NNC CRM has a real WhatsApp inbox built in, where your whole team can read, reply, broadcast and automate, with every message tied to the right lead and deal.',
     img: '/img/feat-whatsapp.jpg', img2: '/img/scene-mobile.jpg',
     features: [
       { icon: 'whatsapp', title: 'Two way chat', body: 'Reply to customers right from the contact record.' },
@@ -194,8 +230,11 @@ export const FEATURES = {
     ],
   }),
   reports: feat({
-    name: 'Reports and analytics', title: 'Know where your business stands',
-    lead: 'Live dashboards and reports that turn your CRM data into decisions you can act on today.',
+    name: 'Reports and analytics',
+    metaTitle: 'CRM Reports & Sales Analytics Dashboard | NNC CRM',
+    metaDescription: 'Live dashboards for sales, lead sources, team performance and revenue. See what is working, fix what is not, export anytime.',
+    title: 'Run the business on numbers, not noise.',
+    lead: 'Reports should answer questions, not create more. NNC CRM gives you live dashboards on the things that decide your month: revenue, sources, team output and conversion. Open it in the morning and you know exactly where to spend your day.',
     img: '/img/scene-data.jpg', img2: '/img/scene-dashboard.jpg',
     features: [
       { icon: 'reports', title: 'Live dashboards', body: 'Sales, collections and growth at a glance.' },
@@ -204,8 +243,11 @@ export const FEATURES = {
     ],
   }),
   integrations: feat({
-    name: 'Integrations', title: 'Works with the tools you already use',
-    lead: 'Connect WhatsApp, Gmail, Razorpay, Tally, Shopify and more, so your data flows without double entry.',
+    name: 'Integrations',
+    metaTitle: 'CRM Integrations: Website, Ads, Payments | NNC CRM',
+    metaDescription: 'Connect website forms, Google and Meta ad leads, payment gateways and the tools your team already uses. Your CRM, wired into your business.',
+    title: 'Wired into the tools you already use.',
+    lead: 'A CRM works best when it sits at the centre of everything. NNC CRM connects to your website, your ad accounts, your payment gateway and your everyday tools, so leads and data flow in automatically and your team stops copying things by hand.',
     img: '/img/scene-planning.jpg', img2: '/img/scene-team.jpg',
     features: [
       { icon: 'integrations', title: 'Plug and play', body: 'Turn on the tools you use in a few clicks.' },
@@ -217,25 +259,43 @@ export const FEATURES = {
 
 /* ============================ COMPANY ============================ */
 const companyCrumb = { label: 'Company', href: '/company/about' }
-const cb = (label, o) => ({ metaTitle: `${label} | NNC CRM`, metaDescription: o.lead, breadcrumb: [HOME, companyCrumb, { label }] })
+const cb = (label, o) => ({ metaTitle: o.metaTitle || `${label} | NNC CRM`, metaDescription: o.metaDescription || o.lead, breadcrumb: [HOME, companyCrumb, { label }] })
 
 export const COMPANY = {
   about: {
-    ...cb('About us', { lead: 'We build the decision making CRM for Indian businesses.' }),
-    hero: { eyebrow: 'Company', title: 'We help Indian businesses decide with confidence', lead: 'NNC CRM started with a simple belief: every business, big or small, deserves a clear view of what is next, not just what already happened.', ctas: heroCtas, media: img('/img/scene-team.jpg', 'Our team') },
+    metaTitle: 'About NNC | The Decision-Making CRM, Built in India',
+    metaDescription: 'NNC CRM is built by Nakshatra Namaha Creations, a ten year software company. We built one CRM right, after building it for hundreds of clients.',
+    breadcrumb: [HOME, companyCrumb, { label: 'About us' }],
+    hero: {
+      eyebrow: 'Company',
+      title: 'We built this CRM hundreds of times before we built it once.',
+      lead: 'For over ten years, our team at Nakshatra Namaha Creations built custom software for real estate firms, hospitals, academies, factories and agencies. Every client wanted roughly the same things: catch every lead, follow up on WhatsApp, send invoices, know what next month looks like. So we built it once, the right way, and made it available to everyone. That is NNC CRM.',
+      ctas: heroCtas,
+      media: img('/img/scene-team.jpg', 'The NNC team'),
+    },
     blocks: [
-      { type: 'stats', items: [ { value: '2,000+', label: 'businesses across India' }, { value: '15', label: 'industries served' }, { value: '4.8 / 5', label: 'average customer rating' } ] },
-      { type: 'featureGrid', title: 'What we stand for', items: [
-        { icon: 'forecast', title: 'Clarity', body: 'Plain numbers and clear views, no jargon, no clutter.' },
-        { icon: 'users', title: 'Every business', body: 'Built for the corner shop and the factory floor alike.' },
-        { icon: 'security', title: 'Trust', body: 'Your data is private, secure and always yours.' },
+      { type: 'stats', items: [
+        { value: '10+', label: 'years building software' },
+        { value: '565+', label: 'projects delivered' },
+        { value: '35+', label: 'in house team' },
+        { value: '4', label: 'offices across India' },
+      ] },
+      { type: 'prose', sections: [
+        { h: 'Why we built NNC CRM', p: ['We were rebuilding the same twenty features for every client. We decided to build them properly, with WhatsApp native, real automation doing real work, and pricing that fits how Indian businesses actually operate.'] },
+        { h: 'Not a runway. A track record.', p: ['We are not a venture funded startup with a 24 month clock. We are a company with paying clients, delivered projects and teams in four cities.'] },
+      ] },
+      { type: 'stats', title: 'Where to find us', items: [
+        { value: 'Bengaluru', label: 'Head office' },
+        { value: 'Mumbai', label: 'Thane West' },
+        { value: 'Mysuru', label: 'Regional office' },
+        { value: 'Hyderabad', label: 'Regional office' },
       ] },
     ],
-    cta: startCta,
+    cta: { title: 'Build the CRM your business actually needs.', sub: 'Start your free trial, or talk to our team about the right plan for you.', primary: { label: 'Start free trial', href: '#start' }, secondary: { label: 'Contact us', href: '/company/contact' } },
   },
   careers: {
-    ...cb('Careers', { lead: 'Join us and help Indian businesses grow.' }),
-    hero: { eyebrow: 'Careers', title: 'Build the CRM India runs on', lead: 'We are a small, focused team that ships fast and cares deeply about our customers. Come build with us.', ctas: [{ label: 'See open roles', href: '#roles', variant: 'ghost' }], media: img('/img/scene-people.jpg', 'Careers') },
+    ...cb('Careers', { lead: 'Join us and help Indian businesses grow.', metaTitle: "Careers at NNC | Build India's CRM With Us", metaDescription: 'Join NNC and help build the decision making CRM used across industries. Open roles in engineering, sales, support and marketing across four cities.' }),
+    hero: { eyebrow: 'Careers', title: 'Build the CRM the whole country runs on.', lead: 'We are a profitable, ten year product and services company building something used by businesses across India. If you want real ownership and real impact, come build with us.', ctas: [{ label: 'See open roles', href: '#roles', variant: 'ghost' }], media: img('/img/scene-people.jpg', 'Careers') },
     blocks: [
       { type: 'featureGrid', title: 'Why work here', items: [
         { icon: 'rocket', title: 'Real impact', body: 'Your work reaches thousands of businesses every day.' },
@@ -251,8 +311,8 @@ export const COMPANY = {
     cta: { title: 'Want to join us?', sub: 'Send your resume and a note to careers@nncdigital.co.in.', primary: { label: 'Email careers', href: 'mailto:careers@nncdigital.co.in' } },
   },
   blog: {
-    ...cb('Blog', { lead: 'Ideas on sales, CRM and running a better business.' }),
-    hero: { eyebrow: 'Blog', title: 'Notes on growth, sales and CRM', lead: 'Practical playbooks and product updates to help you run your business on what is next.', ctas: [], media: img('/img/scene-planning.jpg', 'Blog') },
+    ...cb('Blog', { lead: 'Ideas on sales, CRM and running a better business.', metaTitle: 'NNC CRM Blog | CRM, Sales & WhatsApp Growth Tips', metaDescription: 'Practical guides on CRM, sales pipelines, WhatsApp marketing and growing your business by industry. Written by the NNC team.' }),
+    hero: { eyebrow: 'Blog', title: 'Ideas to help you sell more and chase less.', lead: 'Practical, no fluff guides on running a tighter sales operation, getting more from WhatsApp, and choosing the right CRM for your industry.', ctas: [], media: img('/img/scene-planning.jpg', 'Blog') },
     blocks: [
       { type: 'cards', title: 'Latest articles', items: [
         { icon: 'forecast', title: 'How to forecast revenue with a CRM', body: 'A simple framework to project the next quarter using live pipeline data.', href: '#' },
@@ -263,8 +323,8 @@ export const COMPANY = {
     cta: startCta,
   },
   partners: {
-    ...cb('Partners', { lead: 'Grow with NNC as an implementation or referral partner.' }),
-    hero: { eyebrow: 'Partners', title: 'Partner with NNC CRM', lead: 'Help businesses in your network adopt NNC and earn as they grow. Join our partner program.', ctas: [{ label: 'Become a partner', href: '#start', trial: true }], media: img('/img/scene-deal.jpg', 'Partners') },
+    ...cb('Partners', { lead: 'Grow with NNC as an implementation or referral partner.', metaTitle: 'Partner Program | Resell & Refer NNC CRM', metaDescription: 'Agencies, consultants and resellers: earn recurring revenue by bringing NNC CRM to your clients. Refer, resell or build on our platform.' }),
+    hero: { eyebrow: 'Partners', title: 'Grow your business by growing ours.', lead: 'If you serve businesses that need a CRM, partner with NNC. Refer clients, resell the platform or build on top of it, and earn recurring revenue while we handle the product.', ctas: [{ label: 'Become a partner', href: '#start', trial: true }], media: img('/img/scene-deal.jpg', 'Partners') },
     blocks: [
       { type: 'featureGrid', title: 'Ways to partner', items: [
         { icon: 'partners', title: 'Referral partner', body: 'Refer businesses and earn recurring commission.' },
@@ -275,33 +335,57 @@ export const COMPANY = {
     cta: { title: 'Ready to partner?', sub: 'Tell us about your business and we will be in touch.', primary: { label: 'Contact our team', href: 'mailto:partners@nncdigital.co.in' } },
   },
   customers: {
-    ...cb('Customer stories', { lead: 'See how businesses grow with NNC CRM.' }),
-    hero: { eyebrow: 'Customers', title: 'Businesses growing with NNC', lead: 'From factories to clinics, see how teams use NNC to capture more, forecast better and close faster.', ctas: heroCtas, media: img('/img/scene-growth.jpg', 'Customers') },
+    ...cb('Customer stories', { lead: 'See how businesses grow with NNC CRM.', metaTitle: 'Customer Stories | NNC CRM Results & Reviews', metaDescription: 'See how academies, manufacturers, clinics and sales teams grow with NNC CRM. Real businesses, real results, verified reviews.' }),
+    hero: { eyebrow: 'Customers', title: 'Businesses that stopped losing leads.', lead: 'The proof of a CRM is not its feature list. It is what happens to the businesses that use it. Here are the institutes, factories and teams that run on NNC CRM.', ctas: heroCtas, media: { type: 'component', name: 'crmDashboard' } },
     blocks: [
-      { type: 'stats', items: [ { value: '32%', label: 'more enquiries converted on average' }, { value: '5 hrs', label: 'saved per rep each week' }, { value: '2x', label: 'faster follow up response' } ] },
-      { type: 'cards', title: 'Customer stories', items: [
+      { type: 'stats', items: [
+        { value: '32%', label: 'more enquiries converted on average' },
+        { value: '5 hrs', label: 'saved per rep each week' },
+        { value: '2x', label: 'faster follow up response' },
+        { value: '1 day', label: 'to go live' },
+      ] },
+      { type: 'featureGrid', title: 'What every story has in common', lead: 'Different industries, the same pattern: catch every lead, follow up fast, and decide with real numbers.', items: [
+        { icon: 'enquiries', title: 'The challenge', body: 'Leads scattered across WhatsApp, calls and spreadsheets, with no follow up and no clear numbers.' },
+        { icon: 'integrations', title: 'The solution', body: 'One CRM with the right modules turned on for their business, live in about a day.' },
+        { icon: 'forecast', title: 'The result', body: 'More leads converted, faster collections, and decisions backed by real numbers.' },
+      ] },
+      { type: 'testimonials', title: 'In their words', lead: 'Sample quotes shown here. Replace with your real customer quotes and verified Google reviews before launch.', items: [
+        { quote: 'We stopped losing enquiries overnight. Every lead now gets a follow up, and our conversions are up within the first month.', name: 'Rohit Mehta', role: 'Director', company: 'Steelline Industries', result: '1.4× conversions', initials: 'RM' },
+        { quote: 'WhatsApp campaigns from NNC bring our customers back every month. Repeat sales have doubled since we switched.', name: 'Sneha Patil', role: 'Owner', company: 'Trenz Retail', result: '2× repeat sales', initials: 'SP' },
+        { quote: 'Our agents respond before the lead goes cold. We are closing far more site visits than we ever did before.', name: 'Arjun Reddy', role: 'Sales Head', company: 'Skyline Realty', result: '+30% site visits', initials: 'AR' },
+      ] },
+      { type: 'cards', title: 'Customer stories by industry', lead: 'Read how teams in your sector grow with NNC CRM.', items: [
         { icon: 'manufacturing', title: 'A manufacturer cut dues by half', body: 'How a mid size unit brought order to cash under control with NNC.', href: '#' },
         { icon: 'retail', title: 'A retailer doubled repeat sales', body: 'Using WhatsApp campaigns to bring customers back every month.', href: '#' },
         { icon: 'realestate', title: 'A builder closed 30% more', body: 'Faster follow up turned cold property leads into bookings.', href: '#' },
+        { icon: 'education', title: 'An academy filled more seats', body: 'A coaching institute converted more admission enquiries every season.', href: '#' },
+        { icon: 'service', title: 'A service firm protected renewals', body: 'Automatic reminders brought back AMC and repeat work on time.', href: '#' },
+        { icon: 'sales', title: 'A sales team beat its target', body: 'A daily call list and live pipeline lifted close rates across the team.', href: '#' },
       ] },
     ],
     cta: startCta,
   },
   contact: {
-    ...cb('Contact sales', { lead: 'Talk to our team about NNC CRM.' }),
-    hero: { eyebrow: 'Contact', title: 'Talk to our team', lead: 'Questions about plans, setup or whether NNC fits your business? We are happy to help.', ctas: [{ label: 'Start free trial', href: '#start', trial: true }], media: img('/img/scene-support.jpg', 'Contact') },
+    ...cb('Contact sales', { lead: 'Talk to our team about NNC CRM.', metaTitle: 'Contact Sales | NNC CRM', metaDescription: 'Talk to the NNC team about the right plan for your business. Call 94227 99466, email hello@nncdigital.co.in, or book a quick demo.' }),
+    hero: { eyebrow: 'Contact', title: 'Let us find the right plan for you.', lead: 'Tell us how your business works and we will show you exactly which modules you need and what it will cost. No pressure, no jargon.', ctas: [{ label: 'Start free trial', href: '#start', trial: true }], media: img('/img/scene-support.jpg', 'Contact') },
     blocks: [
       { type: 'cards', title: 'Ways to reach us', items: [
         { icon: 'phone', title: 'Call us', body: '94227 99466, Monday to Saturday, 10am to 7pm.' },
         { icon: 'mail', title: 'Email us', body: 'hello@nncdigital.co.in, we reply within one business day.' },
         { icon: 'whatsapp', title: 'WhatsApp', body: 'Message us on WhatsApp for a quick response.' },
       ] },
+      { type: 'stats', title: 'Our offices', items: [
+        { value: 'Bengaluru', label: 'Head office' },
+        { value: 'Mumbai', label: 'Thane West' },
+        { value: 'Mysuru', label: 'Regional office' },
+        { value: 'Hyderabad', label: 'Regional office' },
+      ] },
     ],
     cta: startCta,
   },
   press: {
-    ...cb('Press', { lead: 'News and media resources for NNC CRM.' }),
-    hero: { eyebrow: 'Press', title: 'Press and media', lead: 'For interviews, logos and media enquiries, get in touch with our team.', ctas: [{ label: 'Email press', href: 'mailto:press@nncdigital.co.in', variant: 'ghost' }], media: img('/img/scene-office.jpg', 'Press') },
+    ...cb('Press', { lead: 'News and media resources for NNC CRM.', metaTitle: 'Press & Media | NNC CRM', metaDescription: 'News, announcements and media resources from NNC. For press enquiries, reach our team or download our brand assets.' }),
+    hero: { eyebrow: 'Press', title: 'News and media resources.', lead: 'The latest from NNC, plus everything the press needs in one place.', ctas: [{ label: 'Email press', href: 'mailto:press@nncdigital.co.in', variant: 'ghost' }], media: img('/img/scene-office.jpg', 'Press') },
     blocks: [
       { type: 'cards', title: 'Media resources', items: [
         { icon: 'press', title: 'Press kit', body: 'Logos, brand assets and product screenshots.', href: '#' },
@@ -315,11 +399,11 @@ export const COMPANY = {
 
 /* ============================ SUPPORT ============================ */
 const supportCrumb = { label: 'Support', href: '/support/help-center' }
-const sb = (label, o) => ({ metaTitle: `${label} | NNC CRM`, metaDescription: o.lead, breadcrumb: [HOME, supportCrumb, { label }] })
+const sb = (label, o) => ({ metaTitle: o.metaTitle || `${label} | NNC CRM`, metaDescription: o.metaDescription || o.lead, breadcrumb: [HOME, supportCrumb, { label }] })
 
 export const SUPPORT = {
   'help-center': {
-    ...sb('Help center', { lead: 'Guides and answers for NNC CRM.' }),
+    ...sb('Help center', { lead: 'Guides and answers for NNC CRM.', metaTitle: 'Help Center | NNC CRM Support', metaDescription: 'Guides, answers and how tos for NNC CRM. Search articles on setup, billing, WhatsApp, imports and more.' }),
     hero: { eyebrow: 'Support', title: 'How can we help?', lead: 'Browse guides, answers and tips to get the most out of NNC CRM.', ctas: [{ label: 'Contact support', href: '/support/contact', variant: 'ghost' }] },
     blocks: [
       { type: 'cards', title: 'Browse by topic', items: [
@@ -334,8 +418,8 @@ export const SUPPORT = {
     cta: { title: 'Still need a hand?', sub: 'Our team is here Monday to Saturday.', primary: { label: 'Contact support', href: '/support/contact' } },
   },
   'getting-started': {
-    ...sb('Getting started', { lead: 'Set up NNC CRM in minutes.' }),
-    hero: { eyebrow: 'Support', title: 'Get up and running in minutes', lead: 'Four quick steps to set up NNC and start capturing every enquiry today.', ctas: [{ label: 'Start free trial', href: '#start', trial: true }] },
+    ...sb('Getting started', { lead: 'Set up NNC CRM in minutes.', metaTitle: 'Getting Started | NNC CRM', metaDescription: 'Set up NNC CRM in minutes. Create your account, pick your plan, import data and go live, step by step.' }),
+    hero: { eyebrow: 'Support', title: 'Get set up in four steps.', lead: 'Four quick steps to set up NNC and start capturing every enquiry today.', ctas: [{ label: 'Start free trial', href: '#start', trial: true }] },
     blocks: [
       { type: 'steps', title: 'Your first day with NNC', items: [
         { title: 'Create your account', body: 'Sign up in seconds, no credit card needed.' },
@@ -347,8 +431,8 @@ export const SUPPORT = {
     cta: startCta,
   },
   api: {
-    ...sb('API documentation', { lead: 'Build on the NNC CRM API.' }),
-    hero: { eyebrow: 'Developers', title: 'NNC CRM API', lead: 'A clean REST API and webhooks to connect NNC with your own systems.', ctas: [{ label: 'Contact developer support', href: '/support/contact', variant: 'ghost' }] },
+    ...sb('API documentation', { lead: 'Build on the NNC CRM API.', metaTitle: 'API Documentation | NNC CRM Developers', metaDescription: 'Build on NNC CRM. REST API and webhooks to connect leads, deals, invoices and more to your own systems.' }),
+    hero: { eyebrow: 'Developers', title: 'The NNC CRM API.', lead: 'A clean REST API and webhooks to connect NNC with your own systems.', ctas: [{ label: 'Contact developer support', href: '/support/contact', variant: 'ghost' }] },
     blocks: [
       { type: 'featureGrid', title: 'What you can build', items: [
         { icon: 'api', title: 'REST API', body: 'Read and write leads, deals, contacts and invoices.' },
@@ -363,8 +447,8 @@ export const SUPPORT = {
     cta: { title: 'Building something?', sub: 'Our developer team is happy to help.', primary: { label: 'Contact developer support', href: '/support/contact' } },
   },
   status: {
-    ...sb('System status', { lead: 'Live status of NNC CRM services.' }),
-    hero: { eyebrow: 'Support', title: 'System status', lead: 'All NNC CRM systems are operational. Subscribe to get notified of any incidents.', ctas: [] },
+    ...sb('System status', { lead: 'Live status of NNC CRM services.', metaTitle: 'System Status | NNC CRM', metaDescription: 'Live status and uptime for NNC CRM services. Check current status and past incidents.' }),
+    hero: { eyebrow: 'Support', title: 'Current system status.', lead: 'All NNC CRM systems are operational. Subscribe to get notified of any incidents.', ctas: [] },
     blocks: [
       { type: 'cards', title: 'Current status', items: [
         { icon: 'status', title: 'Web app', body: 'Operational, 99.98% uptime in the last 90 days.' },
@@ -375,8 +459,8 @@ export const SUPPORT = {
     cta: { title: 'Need help with an issue?', sub: 'Reach our support team any time.', primary: { label: 'Contact support', href: '/support/contact' } },
   },
   security: {
-    ...sb('Security', { lead: 'How NNC keeps your data safe.' }),
-    hero: { eyebrow: 'Trust', title: 'Security you can rely on', lead: 'Your business data is protected with encryption, strict access controls and regular backups.', ctas: [{ label: 'Read our privacy policy', href: '/legal/privacy', variant: 'ghost' }], media: img('/img/scene-dashboard.jpg', 'Security') },
+    ...sb('Security', { lead: 'How NNC keeps your data safe.', metaTitle: 'Security | NNC CRM', metaDescription: 'How NNC CRM protects your data: encryption, access controls, backups and infrastructure hosted in India.' }),
+    hero: { eyebrow: 'Trust', title: 'Your data, protected.', lead: 'Your business data is protected with encryption, strict access controls and regular backups.', ctas: [{ label: 'Read our privacy policy', href: '/legal/privacy', variant: 'ghost' }], media: img('/img/scene-dashboard.jpg', 'Security') },
     blocks: [
       { type: 'featureGrid', title: 'How we protect your data', items: [
         { icon: 'lock', title: 'Encrypted', body: 'Data is encrypted in transit and at rest.' },
@@ -387,8 +471,8 @@ export const SUPPORT = {
     cta: startCta,
   },
   'data-privacy': {
-    ...sb('Data privacy', { lead: 'How NNC handles your data.' }),
-    hero: { eyebrow: 'Trust', title: 'Your data is yours', lead: 'We collect only what we need to run the service, and we never sell your data.', ctas: [{ label: 'Read privacy policy', href: '/legal/privacy', variant: 'ghost' }] },
+    ...sb('Data privacy', { lead: 'How NNC handles your data.', metaTitle: 'Data Privacy | NNC CRM', metaDescription: 'How NNC CRM collects, uses and protects your data, aligned with the DPDP Act 2023. Your data stays yours.' }),
+    hero: { eyebrow: 'Trust', title: 'Privacy you can trust.', lead: 'We collect only what we need to run the service, and we never sell your data. Our approach is aligned with the DPDP Act 2023.', ctas: [{ label: 'Read privacy policy', href: '/legal/privacy', variant: 'ghost' }] },
     blocks: [
       { type: 'prose', sections: [
         { h: 'Our promise', p: ['You own your data. We process it only to provide NNC CRM to you, and you can export or delete it at any time.'] },
@@ -399,8 +483,8 @@ export const SUPPORT = {
     cta: startCta,
   },
   contact: {
-    ...sb('Contact support', { lead: 'Get help from the NNC team.' }),
-    hero: { eyebrow: 'Support', title: 'Contact support', lead: 'Our team is here to help you get the most out of NNC CRM.', ctas: [] },
+    ...sb('Contact support', { lead: 'Get help from the NNC team.', metaTitle: 'Contact Support | NNC CRM', metaDescription: 'Need help? Reach the NNC support team by email, WhatsApp or phone. We respond fast.' }),
+    hero: { eyebrow: 'Support', title: 'We are here to help.', lead: 'Our team is here to help you get the most out of NNC CRM.', ctas: [] },
     blocks: [
       { type: 'cards', title: 'Reach us', items: [
         { icon: 'phone', title: 'Call', body: '94227 99466, Monday to Saturday, 10am to 7pm.' },
@@ -414,11 +498,11 @@ export const SUPPORT = {
 
 /* ============================ LEGAL ============================ */
 const legalCrumb = { label: 'Legal' }
-const legal = (label, intro, sections) => ({
-  metaTitle: `${label} | NNC CRM`,
-  metaDescription: intro,
+const legal = (label, intro, sections, opts = {}) => ({
+  metaTitle: opts.metaTitle || `${label} | NNC CRM`,
+  metaDescription: opts.metaDescription || intro,
   breadcrumb: [HOME, legalCrumb, { label }],
-  hero: { eyebrow: 'Legal', title: label, lead: intro },
+  hero: { eyebrow: 'Legal', title: opts.h1 || label, lead: intro },
   blocks: [{ type: 'prose', sections }],
   cta: null,
 })
@@ -441,64 +525,129 @@ export const LEGAL = {
     { h: 'Security', p: ['Your data is encrypted in transit and at rest, with role based access and automatic hourly backups.'] },
     { h: 'Privacy', p: ['We collect only what we need and never sell your data. You stay in control of your information at all times.'] },
     { h: 'Reliability', p: ['We target 99.9% uptime and publish live status for all our services.'] },
-  ]),
+  ], { h1: 'Security, privacy and compliance in one place.' }),
   'acceptable-use': legal('Acceptable Use Policy', 'The rules for using NNC CRM responsibly.', [
     { h: 'Responsible use', p: ['You agree not to use NNC CRM to send spam, store unlawful content, or harm the service or other users.'] },
     { h: 'Messaging', p: ['When using WhatsApp and email features, you must follow the relevant platform policies and obtain consent where required.'] },
     { h: 'Enforcement', p: ['We may suspend accounts that breach this policy to protect our customers and the service.'] },
   ]),
-  compliance: legal('Legal and Compliance', 'Our compliance commitments and how to reach our legal team.', [
-    { h: 'Compliance', p: ['NNC CRM is built to help Indian businesses meet their record keeping and GST obligations. We continually review our practices to stay compliant with applicable law.'] },
-    { h: 'Data requests', p: ['For lawful data or compliance requests, contact legal@nncdigital.co.in.'] },
-  ]),
+  compliance: {
+    metaTitle: 'Legal & Compliance | NNC CRM',
+    metaDescription: 'How NNC CRM meets its legal and regulatory obligations, including the DPDP Act 2023, GST, security and lawful data requests. Reach our compliance team.',
+    breadcrumb: [HOME, legalCrumb, { label: 'Legal and Compliance' }],
+    hero: {
+      eyebrow: 'Legal',
+      title: 'Legal and Compliance',
+      lead: 'How NNC CRM, operated by Nakshatra Namaha Creations, meets its legal and regulatory obligations, and how to reach our compliance team. Last reviewed June 2026.',
+    },
+    blocks: [
+      { type: 'prose', sections: [
+        { h: 'Overview', p: ['NNC CRM is built and operated by Nakshatra Namaha Creations. This page summarises how we meet our legal and regulatory obligations and how to reach our compliance team. It is provided for your information and is not legal advice.'] },
+        { h: 'Compliance with Indian law', p: ['We operate in line with applicable Indian law, including the Information Technology Act 2000 and its rules, the Digital Personal Data Protection Act 2023, and applicable tax law. We review our practices regularly and update them as the law evolves.'] },
+        { h: 'Data protection', p: ['We process the personal data in your account only to provide and improve NNC CRM, in line with our Privacy Policy and the Digital Personal Data Protection Act 2023. We collect only what we need, we never sell your data, and you can export or delete it at any time.'] },
+        { h: 'Where your data is stored', p: ['Customer data is hosted on secure infrastructure, encrypted in transit and at rest. Access is controlled by role, logged for audit, and backed up regularly.'] },
+        { h: 'GST and record keeping', p: ['NNC CRM helps you raise GST ready invoices and keep clean records. You remain responsible for your own tax registration, filings and returns. We provide the tools and documents to make that easier.'] },
+        { h: 'Messaging and consent', p: ['When you use the WhatsApp, SMS and email features, you must obtain the consent required by law and follow the relevant platform and regulatory policies, including TRAI and DLT rules and the WhatsApp Business policy. Our Acceptable Use Policy explains what is and is not allowed.'] },
+        { h: 'Sub processors', p: ['We use a small number of trusted third party providers for hosting, payments and messaging to deliver the service. Each is bound by appropriate confidentiality and data protection terms.'] },
+        { h: 'Lawful requests', p: ['We respond to valid and lawful requests from authorities in accordance with applicable law. Where we are legally permitted to do so, we will notify the affected customer before disclosing their data.'] },
+        { h: 'Intellectual property', p: ['NNC CRM, including its software, brand and content, is owned by Nakshatra Namaha Creations. The business data you enter remains yours at all times.'] },
+        { h: 'Grievance officer', p: ['In line with Indian IT rules, you can reach our Grievance Officer for any complaint about content, data or compliance. Write to legal@nncdigital.co.in with the subject Grievance. We will acknowledge your complaint within 24 hours and resolve it within the timelines set by law.'] },
+        { h: 'Changes to this page', p: ['We may update our legal and compliance practices from time to time. Material changes will be posted here with a new review date.'] },
+        { h: 'Contact', p: ['For any legal, compliance or data request, contact our team at legal@nncdigital.co.in.'] },
+      ] },
+      { type: 'cards', title: 'Related policies and resources', items: [
+        { icon: 'lock', title: 'Privacy Policy', body: 'How we collect, use and protect your information.', href: '/legal/privacy' },
+        { icon: 'security', title: 'Security', body: 'Encryption, access controls and backups.', href: '/support/security' },
+        { icon: 'users', title: 'Data privacy', body: 'Your data, your control, aligned with the DPDP Act 2023.', href: '/support/data-privacy' },
+        { icon: 'integrations', title: 'Trust Center', body: 'Security, privacy and reliability in one place.', href: '/legal/trust-center' },
+      ] },
+    ],
+    cta: {
+      title: 'Questions about legal or compliance?',
+      sub: 'Reach our legal and compliance team and we will help.',
+      primary: { label: 'Email legal', href: 'mailto:legal@nncdigital.co.in' },
+      secondary: { label: 'Visit the Trust Center', href: '/legal/trust-center' },
+    },
+  },
   cookies: legal('Cookie Settings', 'How NNC CRM uses cookies and how to control them.', [
     { h: 'What cookies we use', p: ['We use essential cookies to run the product and a small number of analytics cookies to understand usage and improve the experience.'] },
     { h: 'Managing cookies', p: ['You can control cookies through your browser settings. Disabling essential cookies may affect how the product works.'] },
-  ]),
+  ], { h1: 'Cookie preferences.' }),
 }
 
 /* ============================ OVERVIEWS ============================ */
 export const FEATURES_OVERVIEW = {
-  metaTitle: 'Features | NNC CRM',
-  metaDescription: 'Everything in NNC CRM: enquiries, pipeline, forecasting, invoicing, WhatsApp, reports and integrations.',
+  metaTitle: 'Features | NNC CRM Software for Sales, Billing & WhatsApp',
+  metaDescription: 'Explore NNC CRM: enquiries, sales pipeline, forecasting, invoicing, WhatsApp engagement, reports and integrations. One modular platform, one subscription.',
   breadcrumb: [HOME, { label: 'Features' }],
   hero: {
     eyebrow: 'Product', title: 'One CRM for the whole customer journey',
-    lead: 'Capture every enquiry, run your pipeline, forecast growth, raise invoices and engage on WhatsApp, all in one place.',
+    lead: 'Every NNC CRM module works on its own and gets stronger together. Turn on only what you need today, add the rest when you grow. Nothing to reinstall, nothing to migrate.',
     ctas: heroCtas, media: { type: 'video', src: '/showcase.mp4', poster: '/showcase.jpg' },
   },
   blocks: [
-    { type: 'cards', title: 'Explore the product', items: [
-      { icon: 'enquiries', title: 'Enquiries', body: 'Catch every enquiry from every channel.', href: '/features/enquiries' },
-      { icon: 'pipeline', title: 'Sales pipeline', body: 'See every deal and its stage at a glance.', href: '/features/sales-pipeline' },
-      { icon: 'forecast', title: 'Forecasting', body: 'Project revenue for the months ahead.', href: '/features/forecasting' },
-      { icon: 'invoice', title: 'Invoicing and payments', body: 'From deal won to payment received.', href: '/features/invoicing' },
-      { icon: 'whatsapp', title: 'WhatsApp engagement', body: 'Reach customers where they reply.', href: '/features/whatsapp' },
-      { icon: 'reports', title: 'Reports and analytics', body: 'Know where your business stands.', href: '/features/reports' },
-      { icon: 'integrations', title: 'Integrations', body: 'Works with the tools you already use.', href: '/features/integrations' },
+    { type: 'stats', items: [
+      { value: '7 modules', label: 'one platform, one subscription' },
+      { value: '30 days', label: 'free trial, no credit card' },
+      { value: '1 day', label: 'to go live' },
+    ] },
+    { type: 'featureGrid', title: 'Explore the product', lead: 'Every module works on its own and gets stronger together. Open one to see what it does.', items: [
+      { icon: 'enquiries', title: 'Enquiries', body: 'Catch every lead from every channel in one inbox.', href: '/features/enquiries' },
+      { icon: 'pipeline', title: 'Sales pipeline', body: 'See every deal by stage, value and owner.', href: '/features/sales-pipeline' },
+      { icon: 'forecast', title: 'Forecasting', body: 'Project revenue 3, 6 and 12 months ahead.', href: '/features/forecasting' },
+      { icon: 'invoice', title: 'Invoicing and payments', body: 'Raise GST ready invoices and get paid faster.', href: '/features/invoicing' },
+      { icon: 'whatsapp', title: 'WhatsApp engagement', body: 'A real WhatsApp inbox built into your CRM.', href: '/features/whatsapp' },
+      { icon: 'reports', title: 'Reports and analytics', body: 'Live dashboards that turn data into decisions.', href: '/features/reports' },
+      { icon: 'integrations', title: 'Integrations', body: 'Wire in your website, ads, payments and tools.', href: '/features/integrations' },
+    ] },
+    { type: 'split', kicker: 'Enquiries', title: 'Every enquiry caught. None forgotten.', body: 'Calls, web forms, WhatsApp, ad leads and walk ins all land in one inbox, assigned to the right person and reminded automatically.', bullets: ['Capture from every channel', 'Auto assign to the right person', 'Reminders until it closes'], media: img('/img/feat-enquiries.jpg', 'NNC CRM enquiry inbox') },
+    { type: 'split', flip: true, kicker: 'Forecasting', title: 'Know what next quarter looks like, today.', body: 'NNC reads your live pipeline and projects revenue 3, 6 and 12 months out, so you plan hiring, cash and targets with numbers, not hope.', bullets: ['Forecasts built from real deals', 'Three horizons in one view', 'Forecast against your target'], media: img('/img/feat-forecast.jpg', 'NNC CRM forecast chart') },
+    { type: 'split', kicker: 'WhatsApp', title: 'India runs on WhatsApp. So does NNC.', body: 'A real WhatsApp inbox built in, where your whole team can read, reply, broadcast and automate, with every message tied to the right deal.', bullets: ['One shared team inbox', 'Qualify leads 24/7', 'Broadcast the compliant way'], media: img('/img/feat-whatsapp.jpg', 'NNC CRM WhatsApp inbox') },
+    { type: 'faq', title: 'Questions about the product', items: [
+      { q: 'Can I turn modules on and off?', a: 'Yes. NNC CRM is modular. Turn on only what you need today and add the rest when you grow, with nothing to reinstall and nothing to migrate.' },
+      { q: 'Do the modules work together?', a: 'Yes. Every module shares the same contacts, deals and history, so an enquiry can flow to a deal, an invoice and a forecast without any re entry.' },
+      { q: 'Can I start with one and add more later?', a: 'Absolutely. Start with the core and add forecasting, invoicing or integrations whenever you are ready. Your data stays exactly where it is.' },
     ] },
   ],
   cta: startCta,
 }
 
 export const INDUSTRIES_OVERVIEW = {
-  metaTitle: 'Industries | NNC CRM',
-  metaDescription: 'NNC CRM is built for sales teams, services, manufacturing, retail, healthcare, education and real estate.',
+  metaTitle: 'CRM by Industry: Education, Manufacturing, Healthcare | NNC',
+  metaDescription: 'Ready built CRM packs for education, manufacturing, healthcare, retail, real estate, service businesses and sales teams. Pick yours and go live today.',
   breadcrumb: [HOME, { label: 'Industries' }],
   hero: {
-    eyebrow: 'Industries', title: 'Built for how your business works',
-    lead: 'One CRM, adapted to your team, so you go live sooner with workflows that fit your industry.',
+    eyebrow: 'Industries', title: 'A CRM that already speaks your industry.',
+    lead: 'Generic software makes you bend your business to fit it. NNC CRM ships ready built for the way your industry actually works, with the right stages, fields and reports already in place. Over ten years we have built CRMs for academies, factories, clinics and sales floors. Pick yours below.',
     ctas: heroCtas, media: { type: 'video', src: '/hero-reel.mp4', poster: '/hero-reel.jpg' },
   },
   blocks: [
-    { type: 'cards', title: 'Find your industry', items: [
-      { icon: 'sales', title: 'Sales teams', body: 'Track every deal and close faster.', href: '/industries/sales-teams' },
-      { icon: 'service', title: 'Service businesses', body: 'Clients, projects and payments in one place.', href: '/industries/service-businesses' },
-      { icon: 'manufacturing', title: 'Manufacturing', body: 'Connect orders, dispatch and payments.', href: '/industries/manufacturing' },
-      { icon: 'retail', title: 'Retail and distribution', body: 'Turn one time buyers into regulars.', href: '/industries/retail' },
-      { icon: 'healthcare', title: 'Healthcare and clinics', body: 'Patients, appointments and follow ups.', href: '/industries/healthcare' },
-      { icon: 'education', title: 'Education', body: 'Admissions enquiries and fees, organised.', href: '/industries/education' },
-      { icon: 'realestate', title: 'Real estate', body: 'Leads, site visits and bookings to close.', href: '/industries/real-estate' },
+    { type: 'stats', items: [
+      { value: '8 industries', label: 'ready built CRM packs' },
+      { value: '10+ years', label: 'building industry CRMs' },
+      { value: '1 day', label: 'to go live' },
+    ] },
+    { type: 'featureGrid', title: 'Choose your industry', lead: 'Every pack ships with the pipeline stages, fields and reports your industry needs. Open yours to see the version built for you.', items: [
+      { icon: 'sales', title: 'Sales teams', body: 'A CRM for sales teams: visual pipeline, daily call lists and live targets.', href: '/industries/sales-teams' },
+      { icon: 'service', title: 'Service businesses', body: 'A service business CRM: every job from enquiry to invoice, plus repeat revenue.', href: '/industries/service-businesses' },
+      { icon: 'manufacturing', title: 'Manufacturing', body: 'A manufacturing CRM: enquiry to quotation to dispatch to payment.', href: '/industries/manufacturing' },
+      { icon: 'retail', title: 'Retail and distribution', body: 'A retail and distribution CRM: dealers, orders and collections in one view.', href: '/industries/retail' },
+      { icon: 'healthcare', title: 'Healthcare and clinics', body: 'A healthcare CRM: patients, appointments and follow ups, kept private.', href: '/industries/healthcare' },
+      { icon: 'education', title: 'Education', body: 'An education CRM: admission enquiries, parent follow ups and fees.', href: '/industries/education' },
+      { icon: 'realestate', title: 'Real estate', body: 'A real estate CRM: portal and ad leads, site visits and bookings.', href: '/industries/real-estate' },
+      { icon: 'users', title: 'Training institutes and coaching', body: 'A multi center CRM for coaching institutes and training centers.', href: '/multi-center-training-institutes-crm' },
+    ] },
+    { type: 'split', kicker: 'Industry specific CRM', title: 'Why an industry specific CRM beats a generic one', body: 'A generic CRM hands you empty fields and a blank pipeline, then leaves the hard part to you. An industry specific CRM from NNC arrives already set up for how your sector sells, serves and gets paid, so your team is productive on day one.', bullets: ['The right pipeline stages, ready on day one', 'Fields and forms that match your business', 'The reports your industry actually uses', 'Go live in a day, not a quarter'], media: img('/img/scene-dashboard.jpg', 'Industry specific CRM dashboard') },
+    { type: 'featureGrid', title: 'Built for the way your industry works', items: [
+      { icon: 'pipeline', title: 'Ready built workflows', body: 'Stages, fields and automations tuned to your sector, from day one.' },
+      { icon: 'reports', title: 'The right reports', body: 'The numbers your industry runs on, without building dashboards yourself.' },
+      { icon: 'whatsapp', title: 'WhatsApp follow up', body: 'Reach customers, patients, parents or buyers where they actually reply.' },
+    ] },
+    { type: 'faq', title: 'Industry CRM questions', items: [
+      { q: 'What is an industry specific CRM?', a: 'An industry specific CRM ships with the pipeline stages, fields, automations and reports your sector needs, instead of a blank, generic setup. NNC CRM offers ready packs for eight industries so you go live faster.' },
+      { q: 'Do you have a CRM for manufacturing?', a: 'Yes. The NNC manufacturing CRM connects enquiry, quotation, order, dispatch and collections on one screen, with GST ready invoicing built in.' },
+      { q: 'Is there a CRM for healthcare or clinics?', a: 'Yes. The NNC healthcare CRM manages patient enquiries, appointments and follow ups, with role based access and privacy built in.' },
+      { q: 'Which industries does NNC CRM support?', a: 'Sales teams, service businesses, manufacturing, retail and distribution, healthcare and clinics, education, real estate, and multi center training institutes and coaching centers.' },
     ] },
   ],
   cta: startCta,

@@ -100,7 +100,21 @@ const Send = () => (
   </svg>
 )
 
-export default function HelpBot() {
+// Floating WhatsApp shortcut, stacked directly above the chat launcher.
+const WA_NUMBER = '919164566466'
+const WA_TEXT = 'Hi NNC, I would like to know more about NNC CRM.'
+const WA_HREF = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT)}`
+
+const WhatsAppMark = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.34 5L2 22l5.17-1.35a9.93 9.93 0 0 0 4.87 1.25h.01c5.5 0 9.96-4.46 9.96-9.96 0-2.66-1.04-5.16-2.92-7.04A9.9 9.9 0 0 0 12.04 2zm0 1.87c2.16 0 4.19.84 5.72 2.37a8.03 8.03 0 0 1 2.37 5.72c0 4.46-3.63 8.09-8.1 8.09a8.06 8.06 0 0 1-4.11-1.13l-.3-.17-3.07.8.82-2.99-.19-.31a8.03 8.03 0 0 1-1.24-4.29c0-4.46 3.63-8.09 8.1-8.09zm-4.6 4.06c-.22 0-.57.08-.86.4-.3.32-1.13 1.1-1.13 2.69s1.16 3.12 1.32 3.33c.16.22 2.25 3.44 5.46 4.69 2.66 1.05 3.2.84 3.78.79.58-.05 1.87-.76 2.13-1.5.26-.74.26-1.38.19-1.5-.08-.13-.3-.21-.61-.37-.32-.16-1.87-.92-2.16-1.03-.29-.11-.5-.16-.71.16-.21.32-.81 1.03-1 1.24-.18.21-.37.24-.68.08-.32-.16-1.34-.49-2.55-1.57-.94-.84-1.58-1.88-1.76-2.2-.19-.31-.02-.48.14-.64.14-.14.32-.37.47-.56.16-.18.21-.31.32-.53.1-.21.05-.4-.03-.56-.08-.16-.7-1.76-.99-2.4-.25-.57-.5-.56-.71-.57h-.62z" />
+  </svg>
+)
+
+// showWhatsApp: the site-wide lead chat now owns the WhatsApp entry point, so
+// this shortcut is suppressed where that chat is present to avoid stacking
+// three floating buttons in the same corner.
+export default function HelpBot({ showWhatsApp = true }) {
   const [open, setOpen] = useState(false)
   const [messages, setMessages] = useState([{ from: 'bot', text: GREETING }])
   const [suggestions, setSuggestions] = useState(STARTERS)
@@ -143,6 +157,21 @@ export default function HelpBot() {
 
   return (
     <>
+      {showWhatsApp && (
+      <a
+        className={`${styles.wa} ${open ? styles.waHidden : ''}`}
+        href={WA_HREF}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with NNC on WhatsApp"
+        aria-hidden={open}
+        tabIndex={open ? -1 : 0}
+      >
+        <WhatsAppMark />
+        <span className={styles.waTip}>Chat on WhatsApp</span>
+      </a>
+      )}
+
       <button
         type="button"
         className={`${styles.fab} ${open ? styles.fabOpen : ''}`}

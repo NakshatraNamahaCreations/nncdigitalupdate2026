@@ -27,3 +27,15 @@ next-env.d.ts
 *.njsproj
 *.sln
 *.sw?
+
+# Build archives and local working files — not source.
+# nncdigital.zip is ~2.3 GB and out.zip ~18 MB; GitHub rejects blobs over
+# 100 MB and committing them would bloat history permanently.
+*.zip
+shots/
+palette.png
+fix-growth.cjs
+fix-users.cjs
+
+# Local scratch
+scratchpad/

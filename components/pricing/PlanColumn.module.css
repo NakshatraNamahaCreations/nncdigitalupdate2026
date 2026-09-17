@@ -61,8 +61,18 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
+.gst {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--grey-soft);
+}
+.blue .gst {
+  color: rgba(255, 255, 255, 0.72);
+}
 .seats {
-  margin-top: 8px;
+  margin-top: 4px;
   font-size: 13.5px;
   color: var(--grey);
 }

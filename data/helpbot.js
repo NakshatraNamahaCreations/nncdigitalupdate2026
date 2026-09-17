@@ -36,7 +36,7 @@ export const KB = [
       "cost"
     ],
     "question": "How much does NNC CRM cost?",
-    "answer": "Three plans: Starter Rs 14,999/year (5 users), Growth Rs 29,999/year (10 users, most popular), and Enterprise Rs 59,999/year (unlimited users). All billed in INR, GST extra. Monthly options too.",
+    "answer": "Three plans: Starter Rs 14,999/year (1 user), Growth Rs 29,999/year (3 users, most popular), and Enterprise Rs 59,999/year (up to 10 users). All billed in INR, GST extra. Monthly options too.",
     "link": {
       "label": "See pricing",
       "href": "/pricing"
@@ -57,7 +57,7 @@ export const KB = [
       "plans available"
     ],
     "question": "What plans are available?",
-    "answer": "Three plans: Starter (5 users) for core CRM, enquiries, pipeline and invoicing; Growth (10 users, most popular) adds forecasting, WhatsApp and analytics; Enterprise (unlimited users) adds API access, audit logs and a dedicated manager.",
+    "answer": "Three plans: Starter (1 user) for core CRM, enquiries, pipeline and invoicing; Growth (3 users, most popular) adds forecasting, WhatsApp and analytics; Enterprise (up to 10 users) adds API access, audit logs and a dedicated manager.",
     "link": {
       "label": "Compare plans",
       "href": "/pricing"
@@ -182,7 +182,7 @@ export const KB = [
       "how many people can use it"
     ],
     "question": "How many users does each plan include?",
-    "answer": "Starter includes 5 users, Growth includes 10 users, and Enterprise includes unlimited users. You pay one yearly price for the whole team, not per seat.",
+    "answer": "Starter includes 1 user, Growth includes up to 3 users, and Enterprise includes up to 10 users. You pay one price per band, not per seat.",
     "link": {
       "label": "Compare plans",
       "href": "/pricing"
@@ -201,7 +201,7 @@ export const KB = [
       "starter plan details"
     ],
     "question": "What does the Starter plan include?",
-    "answer": "Starter (Rs 14,999/year or Rs 1,499/month, 5 users) includes the core CRM: enquiry and lead management, sales pipeline, contacts, invoicing and payments, basic reports, and email support.",
+    "answer": "Starter (Rs 14,999/year or Rs 1,499/month, 1 user) includes the core CRM: enquiry and lead management, sales pipeline, contacts, invoicing and payments, basic reports, and email support.",
     "link": {
       "label": "See Starter",
       "href": "/pricing"
@@ -220,7 +220,7 @@ export const KB = [
       "middle plan"
     ],
     "question": "What does the Growth plan include?",
-    "answer": "Growth (Rs 29,999/year or Rs 2,999/month, 10 users) is our most popular plan. It adds forecasting, expenses and payroll, inventory, WhatsApp engagement, advanced analytics and priority support on top of Starter.",
+    "answer": "Growth (Rs 29,999/year or Rs 2,999/month, 3 users) is our most popular plan. It adds forecasting, expenses and payroll, inventory, WhatsApp engagement, advanced analytics and priority support on top of Starter.",
     "link": {
       "label": "See Growth",
       "href": "/pricing"
@@ -239,7 +239,7 @@ export const KB = [
       "what do I get with enterprise"
     ],
     "question": "What does the Enterprise plan include?",
-    "answer": "Enterprise (Rs 59,999/year or Rs 5,999/month, unlimited users) adds everything in Growth plus custom roles, data vault with hourly backups, audit logs, API access, single sign-on and a dedicated account manager.",
+    "answer": "Enterprise (Rs 59,999/year or Rs 5,999/month, up to 10 users) adds everything in Growth plus multi center control, custom roles, data vault with hourly backups, audit logs, API access, single sign-on and a dedicated account manager.",
     "link": {
       "label": "See Enterprise",
       "href": "/pricing"
@@ -861,7 +861,7 @@ export const KB = [
       "free trail"
     ],
     "question": "Can I try NNC CRM for my industry before paying?",
-    "answer": "Yes. Every plan includes a 30 day free trial, no credit card required, cancel anytime. Setup typically takes about a day, so you can test it with your own workflows. Starter is Rs 14,999 per year for 5 users.",
+    "answer": "Yes. Every plan includes a 30 day free trial, no credit card required, cancel anytime. Setup typically takes about a day, so you can test it with your own workflows. Starter is Rs 14,999 per year for 1 user.",
     "link": {
       "label": "See pricing",
       "href": "/pricing"
@@ -1018,7 +1018,7 @@ export const KB = [
       "add staff"
     ],
     "question": "How do I add team members?",
-    "answer": "Invite your people from your account and set their roles in seconds. Your plan sets the limit: Starter 5 users, Growth 10 users, and Enterprise unlimited users.",
+    "answer": "Invite your people from your account and set their roles in seconds. Your plan sets the limit: Starter 1 user, Growth up to 3 users, and Enterprise up to 10 users.",
     "link": {
       "label": "Get started",
       "href": "/support/getting-started"
@@ -1038,7 +1038,7 @@ export const KB = [
       "user count"
     ],
     "question": "How many users can I add?",
-    "answer": "It depends on your plan: Starter includes 5 users, Growth includes 10 users, and Enterprise includes unlimited users. You can upgrade anytime as your team grows.",
+    "answer": "It depends on your plan: Starter includes 1 user, Growth includes up to 3 users, and Enterprise includes up to 10 users. You can upgrade anytime as your team grows.",
     "link": {
       "label": "See plans",
       "href": "/pricing"
@@ -2021,7 +2021,7 @@ export const KB = [
       "NNC advantages"
     ],
     "question": "How is NNC CRM different from other CRMs?",
-    "answer": "Two ways. You pick one simple yearly plan by team size (5, 10 or unlimited users) instead of paying per seat. And NNC doesn't just store the past, it forecasts where your business is heading over the next 3, 6 and 12 months.",
+    "answer": "Two ways. You pick one simple yearly plan by team size (1, 3 or 10 users) instead of paying per seat. And NNC doesn't just store the past, it forecasts where your business is heading over the next 3, 6 and 12 months.",
     "link": {
       "label": "See forecasting",
       "href": "/features/forecasting"
@@ -2043,7 +2043,7 @@ export const KB = [
       "is nnc for startups"
     ],
     "question": "Is NNC CRM good for small businesses?",
-    "answer": "Yes. NNC is built for Indian businesses of every size. The Starter plan covers 5 users at Rs 14,999/year, and you can upgrade as you grow. Setup typically takes about a day.",
+    "answer": "Yes. NNC is built for Indian businesses of every size. The Starter plan covers 1 user at Rs 14,999/year, and you can upgrade as you grow. Setup typically takes about a day.",
     "link": {
       "label": "See pricing",
       "href": "/pricing"
@@ -2366,7 +2366,7 @@ export const KB = [
       "franchise locations"
     ],
     "question": "Can NNC CRM handle multiple branches or locations?",
-    "answer": "Yes. NNC CRM works for multi branch and multi location businesses, with role based access so each branch sees the right data. The Enterprise plan adds custom roles and unlimited users, ideal for larger operations.",
+    "answer": "Yes. NNC CRM works for multi branch and multi location businesses, with role based access so each branch sees the right data. The Enterprise plan adds multi center control, custom roles and up to 10 users, ideal for larger operations.",
     "link": {
       "label": "View plans",
       "href": "/pricing"
@@ -2556,7 +2556,7 @@ export const KB = [
       "everyone access at once"
     ],
     "question": "Can multiple team members use NNC CRM at the same time?",
-    "answer": "Yes. Plans include 5 users (Starter), 10 users (Growth), or unlimited users (Enterprise), all working at the same time with role based access so everyone sees the right data.",
+    "answer": "Yes. Plans include 1 user (Starter), up to 3 users (Growth), or up to 10 users (Enterprise), all working at the same time with role based access so everyone sees the right data.",
     "link": {
       "label": "View plans",
       "href": "/pricing"

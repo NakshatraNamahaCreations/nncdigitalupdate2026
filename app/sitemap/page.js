@@ -1,5 +1,6 @@
 import Breadcrumbs from '@/components/ui/Breadcrumbs/Breadcrumbs'
 import { CATEGORIES, FEATURES_OVERVIEW, INDUSTRIES_OVERVIEW } from '@/data/pages'
+import { travelPages } from '@/data/travelPages'
 import styles from './sitemap.module.css'
 
 export const metadata = {
@@ -10,9 +11,19 @@ export const metadata = {
 const label = (cat, slug) => CATEGORIES[cat][slug].breadcrumb.at(-1).label
 const links = (cat) => Object.keys(CATEGORIES[cat]).map((slug) => ({ href: `/${cat}/${slug}`, label: label(cat, slug) }))
 
+// Travel CRM landing pages. Listed by keyword, which is both the page topic
+// and the clearest label for a reader.
+const travelLabel = (kw) =>
+  kw.split(' ').map((w, i) => (w === 'crm' ? 'CRM' : i === 0 ? w[0].toUpperCase() + w.slice(1) : w)).join(' ')
+const travelLinks = Object.entries(travelPages).map(([slug, p]) => ({
+  href: `/${slug}`,
+  label: travelLabel(p.keyword),
+}))
+
 const GROUPS = [
   { title: 'Product', items: [{ href: '/features', label: 'Features overview' }, ...links('features'), { href: '/pricing', label: 'Pricing' }] },
   { title: 'Industries', items: [{ href: '/industries', label: 'Industries overview' }, ...links('industries'), { href: '/multi-center-training-institutes-crm', label: 'Training institutes & coaching CRM' }] },
+  { title: 'Travel CRM', items: travelLinks },
   { title: 'Company', items: links('company') },
   { title: 'Support', items: links('support') },
   { title: 'Legal', items: links('legal') },

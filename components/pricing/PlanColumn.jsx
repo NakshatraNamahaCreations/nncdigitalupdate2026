@@ -39,9 +39,9 @@ const Icon = ({ name }) => (
 const rich = (s) =>
   s.split('**').map((part, i) => (i % 2 ? <strong key={i}>{part}</strong> : part))
 
-export default function PlanColumn({ plan, annual }) {
+export default function PlanColumn({ plan, term }) {
   const [open, setOpen] = useState(true)
-  const price = annual ? plan.price : plan.priceMonthly
+  const price = plan.prices[term.key]
 
   return (
     <article className={`${styles.card} ${plan.highlight ? styles.blue : ''}`}>
@@ -50,10 +50,11 @@ export default function PlanColumn({ plan, annual }) {
 
       <div className={styles.priceRow}>
         <span className={styles.amount}>{inr(price)}</span>
-        <span className={styles.per}>/ {annual ? 'year' : 'month'}</span>
+        <span className={styles.per}>{term.per}</span>
       </div>
+      <span className={styles.gst}>plus 18% GST</span>
       <span className={styles.seats}>
-        {plan.seats} · billed {annual ? 'annually' : 'monthly'}
+        {plan.seats} · {term.sub}
       </span>
 
       <a href="#start" data-trial className={styles.cta}>

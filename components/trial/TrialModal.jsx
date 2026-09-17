@@ -1,14 +1,23 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import styles from './TrialModal.module.css'
+import { contact } from '@/data/contact'
 
 const SIZES = ['Just me', '2 to 10', '11 to 50', '51 to 200', '200+']
 const SLIDE_MS = 5000
 
-// Enquiries are delivered here via FormSubmit (no backend needed on a static site).
-const ENQUIRY_EMAIL = 'info@nakshatranamahacreations.com'
+// Enquiries are saved into the NNC CRM (under the "Enquire NNC Digital" tab) and
+// also emailed via FormSubmit as a backup.
+// Where enquiries are DELIVERED. Separate from the address shown to
+// visitors: FormSubmit needs a one-time confirmation per recipient, so
+// changing this silently drops leads until that is done.
+const ENQUIRY_EMAIL = contact.enquiryEmail
+// What visitors are told to write to.
+const PUBLIC_EMAIL = contact.email
 const FORM_ENDPOINT = `https://formsubmit.co/ajax/${ENQUIRY_EMAIL}`
+const CRM_ENDPOINT = 'https://newadminpanelbackendrender26.onrender.com/api/website-enquiry'
 
 const Check = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -90,6 +99,7 @@ const DEMOS = [
 ]
 
 export default function TrialModal() {
+  const router = useRouter()
   const [open, setOpen] = useState(false)
   const [sent, setSent] = useState(false)
   const [sending, setSending] = useState(false)
@@ -140,27 +150,55 @@ export default function TrialModal() {
 
     const name = (fd.get('name') || '').toString().trim()
     const email = (fd.get('email') || '').toString().trim()
+    const phone = `${fd.get('code') || ''} ${fd.get('phone') || ''}`.trim()
+    const company = (fd.get('company') || '').toString().trim()
+    const teamSize = (fd.get('teamsize') || '').toString()
+
     const payload = {
       Name: name,
       Email: email,
-      Phone: `${fd.get('code') || ''} ${fd.get('phone') || ''}`.trim(),
-      Company: (fd.get('company') || '').toString().trim(),
-      'Team size': (fd.get('teamsize') || '').toString(),
-      _subject: `New NNC CRM trial enquiry from ${name || 'website'}`,
+      Phone: phone,
+      Company: company,
+      'Team size': teamSize,
+      _subject: `New NNC Digital trial enquiry from ${name || 'website'}`,
       _template: 'table',
       _captcha: 'false',
+    }
+
+    // CRM payload — site:'nncdigital' routes it to the "Enquire NNC Digital" tab.
+    const crmPayload = {
+      name,
+      phone,
+      email,
+      company,
+      requirements: [`Free trial request`, teamSize ? `Team size: ${teamSize}` : '']
+        .filter(Boolean)
+        .join('\n'),
+      service: 'CRM & Custom Software',
+      site: 'nncdigital',
+      landingPage: typeof window !== 'undefined' ? window.location.pathname : '/',
     }
 
     setSending(true)
     setError('')
     try {
-      const res = await fetch(FORM_ENDPOINT, {
+      // Primary: save into the CRM.
+      const crmRes = await fetch(CRM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(crmPayload),
+      })
+      if (!crmRes.ok) throw new Error('Request failed')
+      // Backup email — fire and forget.
+      fetch(FORM_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(payload),
-      })
-      if (!res.ok) throw new Error('Request failed')
-      setSent(true)
+      }).catch(() => {})
+      // Redirect to the dedicated thank-you page.
+      setOpen(false)
+      router.push('/thank-you/')
+      return
     } catch (err) {
       // Fallback: open the visitor's mail client addressed to the enquiry inbox.
       const body = encodeURIComponent(
@@ -168,10 +206,10 @@ export default function TrialModal() {
       )
       const subject = encodeURIComponent('NNC CRM trial enquiry')
       setError(
-        `We could not send that automatically. Email us at ${ENQUIRY_EMAIL} or call 94227 99466.`
+        `We could not send that automatically. Email us at ${PUBLIC_EMAIL} or call 94227 99466.`
       )
       if (typeof window !== 'undefined') {
-        window.location.href = `mailto:${ENQUIRY_EMAIL}?subject=${subject}&body=${body}`
+        window.location.href = `mailto:${PUBLIC_EMAIL}?subject=${subject}&body=${body}`
       }
     } finally {
       setSending(false)
@@ -217,9 +255,8 @@ export default function TrialModal() {
           {sent ? (
             <div className={styles.success}>
               <span className={styles.successMark}><Check /></span>
-              <h3>You&apos;re all set.</h3>
-              <p>Our team will reach out within one business day to start your free trial.</p>
-              <button type="button" className={styles.submit} onClick={() => setOpen(false)}>Done</button>
+              <h3 className={styles.successTitle}>Thank you!</h3>
+              <p className={styles.successLead}>Taking you to your confirmation…</p>
             </div>
           ) : (
             <>

@@ -65,7 +65,7 @@ export const howItWorks = {
   title: 'Up and running in minutes, not months.',
   steps: [
     { n: '1', icon: 'roles', title: 'Create your account', body: 'Sign up free in seconds. No credit card required.' },
-    { n: '2', icon: 'sales', title: 'Pick your plan', body: 'Choose by team size: 5, 10 or unlimited users.' },
+    { n: '2', icon: 'sales', title: 'Pick your plan', body: 'Choose by team size: 1, 3 or 10 users.' },
     { n: '3', icon: 'data', title: 'Import your data', body: 'Bring in contacts, enquiries and pipelines in a click.' },
     { n: '4', icon: 'rep', title: 'Go live today', body: 'Start capturing leads and forecasting from day one.' },
   ],

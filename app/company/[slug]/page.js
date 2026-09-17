@@ -3,9 +3,13 @@ import MarketingPage from '@/components/marketing/MarketingPage'
 import { CATEGORIES } from '@/data/pages'
 
 const CATEGORY = 'company'
+// `contact` has its own bespoke page at app/company/contact
+const EXCLUDE = new Set(['contact'])
 
 export function generateStaticParams() {
-  return Object.keys(CATEGORIES[CATEGORY]).map((slug) => ({ slug }))
+  return Object.keys(CATEGORIES[CATEGORY])
+    .filter((slug) => !EXCLUDE.has(slug))
+    .map((slug) => ({ slug }))
 }
 
 export async function generateMetadata({ params }) {

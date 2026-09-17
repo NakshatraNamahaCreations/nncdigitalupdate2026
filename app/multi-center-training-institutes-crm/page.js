@@ -20,7 +20,7 @@ const PAGE = {
       type: 'video',
       src: '/training-reel.mp4',
       poster: '/training-reel.jpg',
-      alt: 'Training institutes and students using NNC CRM',
+      alt: 'Training institutes and students using NNC Digital',
     },
   },
   blocks: [
@@ -164,20 +164,127 @@ const PAGE = {
       ],
     },
     {
+      type: 'plans',
+      title: 'Simple pricing for training institutes',
+      lead: 'Get your courses, exams and certificates online, then scale to live classes and your own white labelled app.',
+      note: 'Prices are per year, plus 18% GST. Start with a free trial, no credit card needed.',
+      plans: [
+        {
+          name: 'Starter',
+          desc: 'For a single center getting online',
+          price: 'Rs 30,000',
+          per: '/ year',
+          cta: { label: 'Start free trial', href: '#start', trial: true },
+          featuresHeader: 'Includes',
+          features: ['Web LMS', 'Courses', 'Exams', 'Certificates', 'Capped students'],
+        },
+        {
+          name: 'Growth',
+          desc: 'For institutes ready to scale',
+          price: 'Rs 75,000 to 90,000',
+          per: '/ year',
+          highlight: true,
+          badge: 'Most popular',
+          cta: { label: 'Start free trial', href: '#start', trial: true },
+          featuresHeader: 'Everything in Starter, and',
+          features: ['Live classes', 'Test series', 'WhatsApp fee collection'],
+        },
+        {
+          name: 'Enterprise',
+          desc: 'White labelled and fully yours',
+          price: 'Custom',
+          per: '',
+          priceNote: 'Tailored to your institute',
+          cta: { label: 'Drop an enquiry', href: '/company/contact' },
+          featuresHeader: 'Everything in Growth, and',
+          features: ['White labelled app', 'Custom domain', 'Priority support'],
+        },
+      ],
+    },
+    {
+      type: 'compareTable',
+      title: 'Everything each plan includes',
+      lead: 'A complete CRM and LMS for training institutes, from courses and exams to fees and your own app. Here is what is included at each tier.',
+      plans: ['Starter', 'Growth', 'Enterprise'],
+      popularIndex: 1,
+      groups: [
+        { group: 'Learning platform (LMS)', rows: [
+          { label: 'Web LMS portal', values: [true, true, true] },
+          { label: 'Courses, sections and lessons', values: [true, true, true] },
+          { label: 'Video lessons with HLS streaming', values: [true, true, true] },
+          { label: 'Secure video with DRM and watermark', values: [false, true, true] },
+          { label: 'Drip schedule and prerequisites', values: [true, true, true] },
+          { label: 'Assignments and doubt solving', values: [true, true, true] },
+          { label: 'Discussion forum', values: [false, true, true] },
+        ] },
+        { group: 'Assessments and certificates', rows: [
+          { label: 'Exams and quizzes', values: [true, true, true] },
+          { label: 'Online proctoring and anti cheat', values: [false, true, true] },
+          { label: 'Test series and question bank', values: [false, true, true] },
+          { label: 'All India ranking', values: [false, true, true] },
+          { label: 'Certificates with QR verify', values: [true, true, true] },
+          { label: 'Custom certificate templates', values: [false, true, true] },
+        ] },
+        { group: 'Live classes and engagement', rows: [
+          { label: 'Live classes, native or Zoom and Meet', values: [false, true, true] },
+          { label: 'Session recordings archived', values: [false, true, true] },
+          { label: 'Attendance capture', values: [false, true, true] },
+        ] },
+        { group: 'CRM and admissions', rows: [
+          { label: 'Lead and admissions management', values: [true, true, true] },
+          { label: 'Student and enrollment management', values: [true, true, true] },
+          { label: 'Batch and cohort management', values: [true, true, true] },
+          { label: 'Staff accounts and roles', values: [true, true, true] },
+          { label: 'Multi center management', values: [false, false, true] },
+        ] },
+        { group: 'Fees and payments', rows: [
+          { label: 'Online fee collection with Razorpay', values: [true, true, true] },
+          { label: 'Instalments and EMI schedules', values: [true, true, true] },
+          { label: 'Receipts and fee dashboard', values: [true, true, true] },
+          { label: 'WhatsApp fee collection and reminders', values: [false, true, true] },
+        ] },
+        { group: 'Communication', rows: [
+          { label: 'Email and SMS notifications', values: [true, true, true] },
+          { label: 'In app and push notifications', values: [true, true, true] },
+          { label: 'WhatsApp Business API', values: [false, true, true] },
+        ] },
+        { group: 'Branding and apps', rows: [
+          { label: 'Your logo and colours', values: [true, true, true] },
+          { label: 'Student mobile app, shared branded', values: [true, true, true] },
+          { label: 'White labelled mobile app', values: [false, false, true] },
+          { label: 'Custom domain', values: [false, false, true] },
+        ] },
+        { group: 'Analytics and reporting', rows: [
+          { label: 'Dashboards for enrollment, exams and fees', values: [true, true, true] },
+          { label: 'Video and exam analytics', values: [false, true, true] },
+          { label: 'Cohort comparison and scheduled reports', values: [false, true, true] },
+          { label: 'CSV and PDF export', values: [true, true, true] },
+        ] },
+        { group: 'Capacity, security and support', rows: [
+          { label: 'Student capacity', values: ['Capped', 'Expanded', 'Unlimited'] },
+          { label: 'Secure isolated instance', values: [true, true, true] },
+          { label: 'MFA, encryption and audit log', values: [true, true, true] },
+          { label: 'Daily backups', values: [true, true, true] },
+          { label: 'Onboarding', values: ['Self serve', 'Guided', 'Dedicated'] },
+          { label: 'Support', values: ['Email', 'Priority', 'Dedicated manager'] },
+        ] },
+      ],
+    },
+    {
       type: 'testimonials',
       title: 'Loved by institutes that run multiple centers',
       lead: 'Sample stories shown here. Replace with your own customer quotes before launch.',
       items: [
-        { quote: 'We finally see every center in one place. Enquiries stopped slipping and our admissions went up within the first term.', name: 'Ananya Rao', role: 'Director, multi city coaching institute', initials: 'AR' },
-        { quote: 'Counsellors across five centers now follow the same process. Follow ups are automatic and nothing falls through.', name: 'Imran Sheikh', role: 'Operations Head, skill academy', initials: 'IS' },
-        { quote: 'Center by center analytics showed us exactly where to focus. Setup took a day and the team adopted it instantly.', name: 'Meera Nair', role: 'Founder, test prep chain', initials: 'MN' },
+        { quote: 'We finally see every center in one place. Enquiries stopped slipping and our admissions went up within the first term.', name: 'Ananya Rao', role: 'Director', company: 'BrightPath Academy', result: '+24% admissions', initials: 'AR' },
+        { quote: 'Counsellors across five centers now follow the same process. Follow ups are automatic and nothing falls through.', name: 'Imran Sheikh', role: 'Operations Head', company: 'SkillForge', result: '5 centers unified', initials: 'IS' },
+        { quote: 'Center by center analytics showed us exactly where to focus. Setup took a day and the team adopted it instantly.', name: 'Meera Nair', role: 'Founder', company: 'TopRankers', result: '1-day setup', initials: 'MN' },
       ],
     },
     {
       type: 'faq',
       title: 'Frequently asked questions',
       items: [
-        { q: 'Which is the best CRM for training institutes?', a: 'NNC CRM is purpose built for multi center training institutes and coaching centers. It captures every enquiry, manages admissions across all your branches, and gives you one clear view of performance, for one simple yearly price.' },
+        { q: 'Which is the best CRM for training institutes?', a: 'NNC Digital is purpose built for multi center training institutes and coaching centers. It captures every enquiry, manages admissions across all your branches, and gives you one clear view of performance, for one simple yearly price.' },
         { q: 'How do you promote a coaching center?', a: 'Capture enquiries from your website, ads, referrals and walk ins, then follow up fast on WhatsApp, SMS and email. NNC automates reminders and campaigns so your counsellors spend their time converting, not chasing.' },
         { q: 'Which is the best CRM for coaching centers?', a: 'A good coaching center CRM centralizes data across branches, tracks each student journey, and shows center by center analytics. NNC does all three and typically goes live in about a day.' },
       ],
@@ -192,9 +299,9 @@ const PAGE = {
 }
 
 export const metadata = {
-  title: 'Best CRM for Training Institutes and Coaching Centers | NNC CRM',
+  title: 'Best CRM for Training Institutes & Coaching Centers | NNC',
   description:
-    'NNC CRM is the best CRM for training institutes and coaching centers. Manage admissions across multiple centers, capture every enquiry, track each student journey and see center by center analytics.',
+    'Manage admissions across multiple centers, capture every enquiry, track each student journey and see center by center analytics. The CRM for multi center coaching.',
 }
 
 export default function Page() {

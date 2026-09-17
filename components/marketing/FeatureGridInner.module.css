@@ -50,6 +50,18 @@
 
 .title { font-size: 18px; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); }
 .body { margin-top: 8px; font-size: 14.5px; line-height: 1.55; color: var(--grey); }
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+}
+.link svg { width: 15px; height: 15px; transition: transform 0.2s ease; }
+.card:hover .link svg { transform: translateX(4px); }
+a.card { display: flex; flex-direction: column; }
 
 /* staggered scroll-in */
 .js .card { opacity: 0; transform: translateY(22px); }

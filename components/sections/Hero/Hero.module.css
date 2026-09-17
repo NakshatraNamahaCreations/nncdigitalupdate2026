@@ -38,6 +38,8 @@
 /* ---- left copy ---- */
 .copy {
   max-width: 560px;
+  /* pull the hero text left of the shared container padding (--pad: 28px) */
+  margin-left: -48px;
 }
 .kicker {
   display: inline-flex;
@@ -186,6 +188,7 @@
   }
   .copy {
     max-width: 640px;
+    margin-left: 0;
   }
 }
 @media (max-width: 520px) {

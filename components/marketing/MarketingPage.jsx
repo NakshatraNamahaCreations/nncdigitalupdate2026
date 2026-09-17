@@ -3,7 +3,20 @@ import Icon from '@/components/ui/Icon/Icon'
 import DataCaptureFlow from './DataCaptureFlow'
 import FeatureGridInner from './FeatureGridInner'
 import LeadCaptureGraphic from './LeadCaptureGraphic'
+import PlansBlock from './PlansBlock'
+import CompareTable from './CompareTable'
+import CRMDashboard from './CRMDashboard'
+import TestimonialsCarousel from './TestimonialsCarousel'
 import styles from './MarketingPage.module.css'
+
+const HERO_COMPONENTS = {
+  crmDashboard: CRMDashboard,
+}
+
+function HeroComponent({ name }) {
+  const Cmp = HERO_COMPONENTS[name]
+  return Cmp ? <Cmp /> : null
+}
 
 const Arrow = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -118,29 +131,7 @@ function Stats({ block }) {
 }
 
 function Testimonials({ block }) {
-  return (
-    <section className={styles.block}>
-      <div className="container">
-        {block.title && <h2 className={styles.blockTitle}>{block.title}</h2>}
-        {block.lead && <p className={styles.blockLead}>{block.lead}</p>}
-        <div className={styles.tgrid}>
-          {block.items.map((t, i) => (
-            <figure className={styles.tcard} key={i}>
-              <div className={styles.tstars} aria-hidden="true">★★★★★</div>
-              <blockquote className={styles.tquote}>{t.quote}</blockquote>
-              <figcaption className={styles.twho}>
-                <span className={styles.tavatar}>{t.initials}</span>
-                <span className={styles.tmeta}>
-                  <strong>{t.name}</strong>
-                  <span className={styles.trole}>{t.role}</span>
-                </span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
+  return <TestimonialsCarousel title={block.title} lead={block.lead} items={block.items} />
 }
 
 function Cards({ block }) {
@@ -266,6 +257,8 @@ const BLOCKS = {
   testimonials: Testimonials,
   dataflow: DataFlowBlock,
   leadCapture: LeadCapture,
+  plans: PlansBlock,
+  compareTable: CompareTable,
 }
 
 export default function MarketingPage({ page }) {
@@ -283,9 +276,15 @@ export default function MarketingPage({ page }) {
               <Ctas ctas={page.hero.ctas} />
             </div>
             {hasMedia && (
-              <div className={styles.heroMedia}>
-                <Media media={page.hero.media} className={styles.heroImg} />
-              </div>
+              page.hero.media.type === 'component' ? (
+                <div className={styles.heroComponent}>
+                  <HeroComponent name={page.hero.media.name} />
+                </div>
+              ) : (
+                <div className={styles.heroMedia}>
+                  <Media media={page.hero.media} className={styles.heroImg} />
+                </div>
+              )
             )}
           </div>
         </div>

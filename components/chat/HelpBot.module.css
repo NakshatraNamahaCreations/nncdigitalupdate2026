@@ -1,8 +1,11 @@
 /* ===== floating button ===== */
+/* Lifted from 24px: the site-wide WhatsApp chat launcher now occupies the
+   bottom-right corner, and the two buttons would otherwise sit on top of each
+   other. */
 .fab {
   position: fixed;
   right: 24px;
-  bottom: 24px;
+  bottom: 96px;
   z-index: 70;
   width: 60px;
   height: 60px;
@@ -21,6 +24,46 @@
 .fabClose { opacity: 0; transform: rotate(-90deg); }
 .fabOpen .fabChat { opacity: 0; transform: rotate(90deg); }
 .fabOpen .fabClose { opacity: 1; transform: rotate(0); }
+
+/* ===== WhatsApp shortcut, stacked above the chat launcher ===== */
+.wa {
+  position: fixed;
+  right: 26px;
+  bottom: 96px;
+  z-index: 70;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 12px 30px -10px rgba(37, 211, 102, 0.75), 0 4px 12px rgba(10, 11, 15, 0.18);
+  transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+}
+.wa:hover { transform: translateY(-2px) scale(1.04); background: #1eb855; }
+.wa svg { width: 30px; height: 30px; }
+
+/* The chat panel occupies this spot once it opens, so step out of its way. */
+.waHidden { opacity: 0; visibility: hidden; pointer-events: none; transform: scale(0.9); }
+
+.waTip {
+  position: absolute;
+  right: calc(100% + 12px);
+  white-space: nowrap;
+  background: var(--navy, #0b5cff);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 12px;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateX(6px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 6px 18px -6px rgba(10, 18, 40, 0.5);
+}
+.wa:hover .waTip, .wa:focus-visible .waTip { opacity: 1; transform: translateX(0); }
 
 /* ===== panel ===== */
 .panel {
@@ -163,10 +206,15 @@
 
 @media (max-width: 480px) {
   .fab { right: 16px; bottom: 16px; }
+  .wa { right: 18px; bottom: 84px; width: 52px; height: 52px; }
+  .wa svg { width: 28px; height: 28px; }
+  .waTip { display: none; }
   .panel { right: 12px; left: 12px; bottom: 84px; width: auto; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .wa:hover { transform: none; }
+  .waHidden { transform: none; }
   .panel { transition: opacity 0.15s ease; transform: none; }
   .panelOpen { transform: none; }
 }
